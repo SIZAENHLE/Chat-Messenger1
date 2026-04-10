@@ -59,7 +59,16 @@ public class Login {
         return "User successfully registered";
     }
     
-   
+    public boolean loginUser(String inputUsername, String inputPassword){
+        return inputUsername.equals(username)&& inputPassword.equals(password);
+    }
     
+    public String returnLoginStatus(boolean loginSuccess){
+        if(loginSuccess){
+            return "welcome" + username +", it is great to see you again!";
+        }else{
+            return "Username or password incorrect, please try again.";
+        }
+    }
     
 }
