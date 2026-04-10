@@ -42,5 +42,24 @@ public class Login {
         return phoneNumber.startsWith("+27")&& phoneNumber.length()== 12;
     }
     
+    public String registerUser(){
+        
+        if(!checkUsername()){
+            return "Username is not correctly formatted.";
+        }
+        
+        if(!checkPasswordComplexity()){
+            return "Password is not correctly formatted.";
+        }
+        
+        if(!checkCellPhoneNumber()){
+            return "Cellphone number is not correctly formatted.";
+        }
+        
+        return "User successfully registered";
+    }
+    
+   
+    
     
 }
