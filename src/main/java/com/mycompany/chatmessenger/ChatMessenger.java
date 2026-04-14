@@ -13,13 +13,13 @@ public class ChatMessenger {
     public static void main(String[] args) {
         Login user = new Login();
         
-        user.setUsername("Lu_lu");
-        user.setPassword("Pass123!");
-        user.setPhoneNumber("+27831234567");
+        user.setUsername("kyl_1");
+        user.setPassword("Ch&&sec@ke99!");
+        user.setPhoneNumber("+27838968976");
         
         System.out.println(user.registerUser());
         
-        boolean login = user.loginUser("Lu_lu", "Pass123!");
+        boolean login = user.loginUser("kyl_1", "Ch&&sec@ke99!");
         
         System.out.println(user.returnLoginStatus(login));
     }
