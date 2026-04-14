@@ -16,7 +16,7 @@ public class NewChatJUnitTest {
     Login user = new Login();
     
     //username test
-    
+    //coment
     @Test
     public void testUsernameCorrectlyFormatted(){
         user.setUsername("kyl_1");
