@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NewChatJUnitTest {
     
     Login user = new Login();
-    
+    //average
     //username test
     
     @Test
