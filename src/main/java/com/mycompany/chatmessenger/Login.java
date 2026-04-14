@@ -13,7 +13,7 @@ public class Login {
     //variables to store user data
     private String username;
     private String password;
-    private String phoneNumber;
+    private String cellPhone;
     
     public void setUsername(String username){
         this.username = username;
@@ -23,11 +23,11 @@ public class Login {
         this.password = password;
     }
     
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
+    public void setCellPhone(String phoneNumber){
+        this.cellPhone = cellPhone;
     }
     
-    public boolean checkUsername(){
+    public boolean checkUserName(){
         return username.contains("_")&& username.length()<=5;
     }
     
@@ -39,21 +39,22 @@ public class Login {
     }
     
     public boolean checkCellPhoneNumber(){
-        return phoneNumber.startsWith("+27")&& phoneNumber.length()== 12;
+        //return cellPhone.startsWith("+27")&& cellPhone.length()== 12;
+        return cellPhone.matches("^\\+27[0-9]{9}$");
     }
     
     public String registerUser(){
         
-        if(!checkUsername()){
-            return "Username is not correctly formatted.";
+        if(!checkUserName()){
+            return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length. ";
         }
         
         if(!checkPasswordComplexity()){
-            return "Password is not correctly formatted.";
+            return "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.";
         }
         
         if(!checkCellPhoneNumber()){
-            return "Cellphone number is not correctly formatted.";
+            return "Cellphone number is not correctly formatted or does not contain international code.";
         }
         
         return "User successfully registered";
@@ -65,7 +66,7 @@ public class Login {
     
     public String returnLoginStatus(boolean loginSuccess){
         if(loginSuccess){
-            return "welcome" + username +", it is great to see you again!";
+            return "Welcome" + username +", it is great to see you again!";
         }else{
             return "Username or password incorrect, please try again.";
         }

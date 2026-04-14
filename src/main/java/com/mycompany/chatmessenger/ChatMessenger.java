@@ -11,11 +11,12 @@ package com.mycompany.chatmessenger;
 public class ChatMessenger {
 
     public static void main(String[] args) {
+        
         Login user = new Login();
         
         user.setUsername("kyl_1");
         user.setPassword("Ch&&sec@ke99!");
-        user.setPhoneNumber("+27838968976");
+        user.setCellPhone("+27838968976");
         
         System.out.println(user.registerUser());
         

@@ -47,13 +47,13 @@ public class NewChatJUnitTest {
     
     @Test
     public void testCellPhoneCorrect(){
-        user.setPhoneNumber("+27838968976");
+        user.setCellPhone("+27838968976");
         assertTrue(user.checkCellPhoneNumber());
     }
     
     @Test
     public void testCellPhoneIncorrect(){
-        user.setPhoneNumber("08966553");
+        user.setCellPhone("08966553");
         assertFalse(user.checkCellPhoneNumber());
     }
     
@@ -63,7 +63,7 @@ public class NewChatJUnitTest {
     public void testRegisterUserSuccess(){
         user.setUsername("kyl_1");
         user.setPassword("Ch&&sec@ke99!");
-        user.setPhoneNumber("+27838968976");
+        user.setCellPhone("+27838968976");
         
         assertEquals("User successfully registered.", user.registerUser());
     }
@@ -72,7 +72,7 @@ public class NewChatJUnitTest {
     public void testRegisterUserFail(){
         user.setUsername("kyle!!!");
         user.setPassword("Ch&&sec@ke99!");
-        user.setPhoneNumber("+27838968976");
+        user.setCellPhone("+27838968976");
         
         assertEquals("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.", user.registerUser());
     }
