@@ -14,6 +14,8 @@ public class Login {
     private String username;
     private String password;
     private String cellPhone;
+    private String firstName;
+    private String lastName;
     
     public void setUsername(String username){
         this.username = username;
@@ -23,10 +25,19 @@ public class Login {
         this.password = password;
     }
     
-    public void setCellPhone(String phoneNumber){
+    public void setCellPhone(String cellPhone){
         this.cellPhone = cellPhone;
     }
     
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    
+    //username must contain "_" and be <=5
     public boolean checkUserName(){
         return username.contains("_")&& username.length()<=5;
     }
@@ -38,8 +49,9 @@ public class Login {
                 password.matches(".*[!@#$%^&*()].*");
     }
     
+    //SA phone number validation using regex
     public boolean checkCellPhoneNumber(){
-        //return cellPhone.startsWith("+27")&& cellPhone.length()== 12;
+        if(cellPhone == null)return false; //prevents crashes
         return cellPhone.matches("^\\+27[0-9]{9}$");
     }
     
@@ -60,13 +72,13 @@ public class Login {
         return "User successfully registered";
     }
     
-    public boolean loginUser(String inputUsername, String inputPassword){
-        return inputUsername.equals(username)&& inputPassword.equals(password);
+    public boolean loginUser(String enteredUsername, String enteredPassword){
+        return enteredUsername.equals(username)&& enteredPassword.equals(password);
     }
     
     public String returnLoginStatus(boolean loginSuccess){
         if(loginSuccess){
-            return "Welcome" + username +", it is great to see you again!";
+            return "Welcome" + firstName +"," + lastName + "it is great to see you again!";
         }else{
             return "Username or password incorrect, please try again.";
         }
